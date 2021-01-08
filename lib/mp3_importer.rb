@@ -10,4 +10,8 @@ class MP3Importer
   end
 
     # ||= is a ruby idiom. It means if @current_user is nil (or false) then try to find it by id and assign it to @current_user, otherwise do nothing.
+    def import
+      files.each { |f| song.new_by_filename(f) }
+    end
+
 end
